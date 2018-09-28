@@ -6,12 +6,12 @@ public class ArrayDemo{
     };
     int[][] multiArr = {
       {1, 0, 3},
-      {2, 3, 0},
-      {3, 4, 5},
+      {-2, 3, 0},
+      {3,-4, -5},
     };
     printArray(arr);
     printArray(multiArr);
-    System.out.println(countZeroes2D(multiArr));
+    printArray(fill2DCopy(multiArr));
     fill2D(multiArr);
 }
 
@@ -63,5 +63,19 @@ public class ArrayDemo{
   printArray(vals);
  }
 
+ public static int[][] fill2DCopy(int[][] vals){
+  int[][] out = new int[vals.length][];
+  for (int i =0; i < vals.length; i++) {
+    out[i] = new int[vals[i].length];
+    for (int n=0; n < vals[i].length; n++) {
+      if (vals[i][n] < 0){
+        out[i][n] = 3;
+      }else{
+        out[i][n] = 1;
+      }
+    }
+  }
+return out;
+}
 
 }            
